@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head> 
+  <meta charset= "utf-8"/>
+  <title>Odliczanie dni do końca roku kalendarzowego 2022</title>
+  
+  <script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=dkjDLNhCzRvTJ3Z3ivoehxHZ_vNnwIHsMlnZIiDEFa2DBxdZa-u8cc-YW8lbmO5FO_qX6S7WeuqSuNbpS2L-xJzT5nHzz58oLe0yvtlnIo33rNHzLgwIdpfoBVCVkQD2wu6ZMS6Jw290bXkQwCf6CAMJg1Wm3Gx-yNQtOUxRLCatCvhBVW8GjzC0fgsmKHRSXKZfa6ReWWEb0iXrDZtNVxvc3pt_8zY98726OrMO4oCs-3sbGAazhuNdbA2LOguI" charset="UTF-8"></script><script type="text/javascript">
+
+function odliczanie()  
+{
+  var dzisiaj = new Date();
+  
+  // aktualna data
+  var dzien = dzisiaj.getDate();
+  var miesiac = dzisiaj.getMonth()+1;
+  var rok = dzisiaj.getFullYear();
+  var milisekundy = dzisiaj.getTime();
+  
+  // data wydarzenia
+    var end = new Date("12/31/2022");
+	var endDzien = end.getDate();
+	var endMiesiac = end.getMonth()+1;
+	var endRok = end.getFullYear();
+	var milisekundy2 = end.getTime();
+	
+	
+	var pozostalo = milisekundy2 - milisekundy;
+	var dni = Math.floor(pozostalo/86400000); 
+
+
+  document.getElementById("aktualnaData").innerHTML = 
+  "Aktualna data: "+dzien+"/"+miesiac+"/"+rok; 
+  document.getElementById("dataWydarzenia").innerHTML = 
+  "Data wydarzenia do końca roku kalendarzowego 2022: "+endDzien+"/"+endMiesiac+"/"+endRok;
+  document.getElementById("dniDoWydarzenia").innerHTML =
+  "Do wydarzenia pozostało: "+ dni;
+  
+}  
+  </script>
+  
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  
+</head>
+<body>  
+
+	
+	<div id="aktualnaData">...</div> 
+
+	<br/>
+	
+	<div id="dataWydarzenia">...</div>
+<br/>
+<br/>	
+	
+	<div id="dniDoWydarzenia">...</div> 
+	
+	<script type="text/javascript" >
+	odliczanie();
+</script>
+</div>
+</body>
+</html>
